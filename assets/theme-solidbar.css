@@ -24,7 +24,7 @@ body { position:relative; }
 
 .theme-solidbar .header nav a.active{
   background: #d5b453;
-/*  color: #222 !important;*/
+  color: #222 !important;
   border-radius: 999px;
   padding: 10px 16px;
   box-shadow: 0 6px 16px rgba(213,180,83,.35);
