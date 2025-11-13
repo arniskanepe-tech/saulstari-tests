@@ -63,3 +63,13 @@ body { position:relative; }
 
 /* Akcenti */
 .theme-solidbar a:hover{ color:#d5b453; }
+
+@media (max-width: 768px){
+  nav a.active{
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding-inline: 0;
+  }
+}
