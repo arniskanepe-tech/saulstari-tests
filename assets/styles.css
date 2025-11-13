@@ -149,12 +149,15 @@ body::after{
 
 /* Mobile nav active: underline instead of pill */
 @media (max-width: 768px){
+  body[class^="theme-"] nav a.active,
+  body[class*=" theme-"] nav a.active,
   nav a.active{
-    background: transparent;
-    box-shadow: none;
+    background: transparent !important;
+    box-shadow: none !important;
     text-decoration: underline;
     text-underline-offset: 4px;
-    padding-inline: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
