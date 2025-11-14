@@ -145,28 +145,26 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* Mobilā navigācija: 2 kolonas, kreisā mala, aktīvais tikai pasvītrots */
 @media (max-width: 768px){
 
-  /* divu kolonnu izkārtojums navigācijai */
+  /* navigācija aizņem visu platumu, vairs netiek centrēta pēc satura */
   header nav{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 24px; /* atstarpe starp kreiso un labo kolonnu */
-    row-gap: 0;
+    display: flex;
+    justify-content: flex-start;   /* nav centrēta */
   }
 
-  /* visi linki: bloka režīmā, izlīdzināti pa kreisi, bez “pill” */
+  /* katram linkam fiksēta “kolonna” – 25% no platuma */
   header nav a{
-    display: block;
-    text-align: left;
-    padding: 4px 0;
-    font-weight: 600;
+    flex: 0 0 25%;                 /* katrs aizņem 1/4 no joslas */
+    max-width: 25%;
+    text-align: left;              /* teksts izlīdzināts pa kreisi */
+    font-weight: 600;              /* vienāds svars visiem – nelēkā */
     background: transparent;
     box-shadow: none;
+    padding: 4px 8px;
   }
 
-  /* aktīvais links – tikai pasvītrots, bez dzeltenā fona */
+  /* aktīvā lapa – tikai pasvītrojums, bez dzeltenā “pill” */
   body[class^="theme-"] header nav a.active,
   body[class*=" theme-"] header nav a.active,
   header nav a.active{
@@ -174,11 +172,11 @@ body::after{
     box-shadow: none !important;
     text-decoration: underline;
     text-underline-offset: 4px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 8px !important;   /* tādi paši paddingi kā pārējiem */
+    padding-right: 8px !important;
+    font-weight: 600 !important;    /* NEKĻŪST treknāks par citiem */
   }
 }
-
 
 /* Mobile hero caption full-width */
 @media (max-width: 768px){
