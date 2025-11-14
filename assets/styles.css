@@ -145,8 +145,20 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* Mobile nav active: underline instead of pill */
 @media (max-width: 768px){
+
+  /* ja gribi, lai nosaukumi vairāk “stāv” pa kreisi, ne pilnīgi centrēti */
+  header nav{
+    justify-content: center; /* vari atstāt kā ir vai mainīt uz flex-start */
+  }
+
+  /* visi linki – vienāds biezums, lai nekas “nelēkā” */
+  header nav a,
+  header nav a.active{
+    font-weight: 600 !important;  /* tas pats svars visiem */
+  }
+
+  /* aktīvais links: bez dzeltenā fona, tikai pasvītrojums */
   body[class^="theme-"] nav a.active,
   body[class*=" theme-"] nav a.active,
   nav a.active{
@@ -158,6 +170,7 @@ body::after{
     padding-right: 0 !important;
   }
 }
+
 
 /* Mobile hero caption full-width */
 @media (max-width: 768px){
