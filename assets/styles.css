@@ -145,21 +145,31 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-
-
-/* Mobile nav active: underline instead of pill */
+/* Mobilā navigācija: 2 rindas, kreisā mala, aktīvais tikai pasvītrots */
 @media (max-width: 768px){
-  body[class^="theme-"] nav a.active,
-  body[class*=" theme-"] nav a.active,
-  nav a.active{
-    background: transparent !important;
-    box-shadow: none !important;
+  header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* katrs links aizņem 50% no rindas un ir izlīdzināts pa kreisi */
+  header nav a{
+    flex: 0 0 50%;
+    text-align: left;
+    padding: 6px 16px;
+  }
+
+  /* aktīvais links – bez “pill”, tikai pasvītrojums */
+  header nav a.active{
+    background: transparent;
+    box-shadow: none;
     text-decoration: underline;
     text-underline-offset: 4px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
   }
 }
+
+
 
 
 
