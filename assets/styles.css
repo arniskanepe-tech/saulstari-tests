@@ -159,11 +159,6 @@ body::after{
   }
 }
 
-
-
-
-
-
 /* Mobile hero caption full-width */
 @media (max-width: 768px){
   .hero .caption{
