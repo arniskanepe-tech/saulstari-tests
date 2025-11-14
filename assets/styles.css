@@ -145,25 +145,25 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
+/* Mobilā navigācija: 2 kolonas, fiksētas pozīcijas, aktīvais tikai pasvītrots */
 @media (max-width: 768px){
 
-  /* navigācija aizņem visu platumu, vairs netiek centrēta pēc satura */
+  /* navigācija aizņem visu platumu, var iet 2 rindās */
   header nav{
     display: flex;
-    flex-wrap: wrap;          /* ļaujam iet uz 2. rindu */
+    flex-wrap: wrap;         /* ļaujam iet uz 2. rindu */
     justify-content: flex-start;
   }
 
-  /* katram linkam fiksēta “kolonna” – 25% no platuma */
+  /* katram linkam fiksēta “kolonna” – puse no rindas */
   header nav a{
-    header nav a{
-    flex: 0 0 50%;           /* katrs aizņem pusi no rindas */
+    flex: 0 0 50%;           /* katrs aizņem 1/2 no rindas */
     max-width: 50%;
-    text-align: left;              /* teksts izlīdzināts pa kreisi */
-    font-weight: 600;              /* vienāds svars visiem – nelēkā */
-    background: transparent;
-    box-shadow: none;
-    padding: 4px 8px;
+    text-align: left;        /* izlīdzināts pa kreisi */
+    font-weight: 600;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 8px 8px;        /* palielināts vertikālais attālums ~2x */
   }
 
   /* aktīvā lapa – tikai pasvītrojums, bez dzeltenā “pill” */
@@ -174,9 +174,7 @@ body::after{
     box-shadow: none !important;
     text-decoration: underline;
     text-underline-offset: 4px;
-    padding-left: 8px !important;   /* tādi paši paddingi kā pārējiem */
-    padding-right: 8px !important;
-    font-weight: 600 !important;    /* NEKĻŪST treknāks par citiem */
+    font-weight: 600 !important;  /* tāds pats svars kā citiem – nelēkā */
   }
 }
 
