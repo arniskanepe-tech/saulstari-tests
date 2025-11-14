@@ -145,23 +145,31 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
+/* Mobilā navigācija: 2 kolonas, kreisā mala, aktīvais tikai pasvītrots */
 @media (max-width: 768px){
 
-  /* ja gribi, lai nosaukumi vairāk “stāv” pa kreisi, ne pilnīgi centrēti */
+  /* divu kolonnu izkārtojums navigācijai */
   header nav{
-    justify-content: center; /* vari atstāt kā ir vai mainīt uz flex-start */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px; /* atstarpe starp kreiso un labo kolonnu */
+    row-gap: 0;
   }
 
-  /* visi linki – vienāds biezums, lai nekas “nelēkā” */
-  header nav a,
+  /* visi linki: bloka režīmā, izlīdzināti pa kreisi, bez “pill” */
+  header nav a{
+    display: block;
+    text-align: left;
+    padding: 4px 0;
+    font-weight: 600;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* aktīvais links – tikai pasvītrots, bez dzeltenā fona */
+  body[class^="theme-"] header nav a.active,
+  body[class*=" theme-"] header nav a.active,
   header nav a.active{
-    font-weight: 600 !important;  /* tas pats svars visiem */
-  }
-
-  /* aktīvais links: bez dzeltenā fona, tikai pasvītrojums */
-  body[class^="theme-"] nav a.active,
-  body[class*=" theme-"] nav a.active,
-  nav a.active{
     background: transparent !important;
     box-shadow: none !important;
     text-decoration: underline;
