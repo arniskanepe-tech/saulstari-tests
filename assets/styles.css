@@ -143,39 +143,24 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* MOBILĀ NAVIGĀCIJA: logo pa kreisi, 2×2 režģis ar lapu nosaukumiem pa labi */
-@media (max-width: 768px){
+/* Telefona PORTRETĀ: nav kā 2×2 režģis, aktīvais tikai pasvītrots */
+@media (max-width: 480px){
 
-  /* Header iekšējais konteineris: logo + navigācija kā 2 kolonnas */
-  .nav{
-    display: grid;
-    grid-template-columns: auto 1fr;  /* 1. kolonna logo, 2. kolonna – menu */
-    align-items: start;
-    height: auto;                     /* vairs nav fiksētais var(--nav-h) */
-    padding: 4px 0 6px;
-  }
-
-  /* Logo paliek savā vietā, tikai mazliet “atvelkam” no augšas */
-  .brand img{
-    height: calc(0.9 * var(--nav-h));
-  }
-
-  /* Navigācija pa labi – 2 kolonnas, 2 rindas */
+  /* 2 kolonnas, 2 rindas tikai pašā <nav>, logo netiek skarts */
   header nav{
     display: grid;
     grid-template-columns: 1fr 1fr;   /* 2 kolonnas */
     grid-auto-rows: auto;
     column-gap: 12px;
     row-gap: 0;
-    justify-items: start;             /* teksts pa kreisi katrā šūnā */
+    justify-items: flex-start;        /* teksts pa kreisi katrā šūnā */
     align-items: start;
-    margin-left: 12px;                /* mazs atstatums no logo */
   }
 
-  /* Lapu nosaukumi šūnās – bez “pill” */
+  /* Lapu nosaukumi šūnās – bez dzeltenā pill */
   header nav a{
     margin: 0;                        /* vairs nav margin-left:14px */
-    padding: 8px 4px;                 /* mazliet vairāk “gaisa” vertikāli */
+    padding: 8px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
     text-align: left;
     border-radius: 0;
     background: transparent;
@@ -185,7 +170,7 @@ body::after{
     color: var(--muted);
   }
 
-  /* Aktīvā lapa – tikai pasvītrota */
+  /* Aktīvā lapa – tikai pasvītrojums */
   body[class^="theme-"] header nav a.active,
   body[class*=" theme-"] header nav a.active,
   header nav a.active{
