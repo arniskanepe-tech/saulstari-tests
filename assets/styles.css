@@ -132,8 +132,6 @@ body::after{
   body::after{ opacity: 1.0; }
 }
 
-
-
 /* v45: uniform service grid (always 3 per row on desktop) */
 .work-grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; }
 .work-card{ grid-column: auto !important; } /* cancel any previous spanning rules */
@@ -145,28 +143,37 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* Mobilā navigācija: 2 kolonas, fiksētas pozīcijas, aktīvais tikai pasvītrots */
+/* Mobilā navigācija: logo augšā, zem tā 2 kolonnas, aktīvais tikai pasvītrots */
 @media (max-width: 768px){
 
-  /* navigācija aizņem visu platumu, var iet 2 rindās */
-  header nav{
+  /* HEADER izkārtojums: logo augšā, zem tā navigācija */
+  header .nav{
     display: flex;
-    flex-wrap: wrap;         /* ļaujam iet uz 2. rindu */
+    flex-direction: column;      /* logo un nav vienā kolonnā */
+    align-items: flex-start;
+  }
+
+  /* NAV aizņem visu platumu un drīkst iet uz 2 rindām */
+  header nav{
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;             /* 2 rindas */
     justify-content: flex-start;
   }
 
-  /* katram linkam fiksēta “kolonna” – puse no rindas */
+  /* KATRS LINKS: puse no rindas, pa kreisi, bez pill */
   header nav a{
-    flex: 0 0 50%;           /* katrs aizņem 1/2 no rindas */
+    flex: 0 0 50%;               /* katrs aizņem 1/2 no joslas */
     max-width: 50%;
-    text-align: left;        /* izlīdzināts pa kreisi */
+    text-align: left;
     font-weight: 600;
     background: transparent !important;
     box-shadow: none !important;
-    padding: 8px 8px;        /* palielināts vertikālais attālums ~2x */
+    padding: 10px 12px;          /* mazliet lielāks augstums (~+15%) */
   }
 
-  /* aktīvā lapa – tikai pasvītrojums, bez dzeltenā “pill” */
+  /* AKTĪVAIS LINKS: tikai pasvītrojums */
   body[class^="theme-"] header nav a.active,
   body[class*=" theme-"] header nav a.active,
   header nav a.active{
@@ -174,7 +181,7 @@ body::after{
     box-shadow: none !important;
     text-decoration: underline;
     text-underline-offset: 4px;
-    font-weight: 600 !important;  /* tāds pats svars kā citiem – nelēkā */
+    font-weight: 600 !important; /* tāds pats svars kā pārējiem */
   }
 }
 
