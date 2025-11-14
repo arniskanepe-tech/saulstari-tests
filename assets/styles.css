@@ -160,7 +160,7 @@ body::after{
   /* Lapu nosaukumi šūnās – bez dzeltenā pill */
   header nav a{
     margin: 0;                        /* vairs nav margin-left:14px */
-    padding: 8px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
+    padding: 4px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
     text-align: left;
     border-radius: 0;
     background: transparent;
