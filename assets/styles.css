@@ -143,20 +143,59 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* Mobile nav active: underline instead of pill */
+/* MOBILĀ NAVIGĀCIJA: logo pa kreisi, 2×2 režģis ar lapu nosaukumiem pa labi */
 @media (max-width: 768px){
-  body[class^="theme-"] nav a.active,
-  body[class*=" theme-"] nav a.active,
-  nav a.active{
+
+  /* Header iekšējais konteineris: logo + navigācija kā 2 kolonnas */
+  .nav{
+    display: grid;
+    grid-template-columns: auto 1fr;  /* 1. kolonna logo, 2. kolonna – menu */
+    align-items: start;
+    height: auto;                     /* vairs nav fiksētais var(--nav-h) */
+    padding: 4px 0 6px;
+  }
+
+  /* Logo paliek savā vietā, tikai mazliet “atvelkam” no augšas */
+  .brand img{
+    height: calc(0.9 * var(--nav-h));
+  }
+
+  /* Navigācija pa labi – 2 kolonnas, 2 rindas */
+  header nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 kolonnas */
+    grid-auto-rows: auto;
+    column-gap: 12px;
+    row-gap: 0;
+    justify-items: start;             /* teksts pa kreisi katrā šūnā */
+    align-items: start;
+    margin-left: 12px;                /* mazs atstatums no logo */
+  }
+
+  /* Lapu nosaukumi šūnās – bez “pill” */
+  header nav a{
+    margin: 0;                        /* vairs nav margin-left:14px */
+    padding: 8px 4px;                 /* mazliet vairāk “gaisa” vertikāli */
+    text-align: left;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 0.95em;
+    line-height: 1.2;
+    color: var(--muted);
+  }
+
+  /* Aktīvā lapa – tikai pasvītrota */
+  body[class^="theme-"] header nav a.active,
+  body[class*=" theme-"] header nav a.active,
+  header nav a.active{
     background: transparent !important;
     box-shadow: none !important;
     text-decoration: underline;
     text-underline-offset: 4px;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    color: var(--muted);
   }
 }
-
 
 /* Mobile hero caption full-width */
 @media (max-width: 768px){
