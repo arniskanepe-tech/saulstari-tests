@@ -150,13 +150,15 @@ body::after{
   /* navigācija aizņem visu platumu, vairs netiek centrēta pēc satura */
   header nav{
     display: flex;
-    justify-content: flex-start;   /* nav centrēta */
+    flex-wrap: wrap;          /* ļaujam iet uz 2. rindu */
+    justify-content: flex-start;
   }
 
   /* katram linkam fiksēta “kolonna” – 25% no platuma */
   header nav a{
-    flex: 0 0 25%;                 /* katrs aizņem 1/4 no joslas */
-    max-width: 25%;
+    header nav a{
+    flex: 0 0 50%;           /* katrs aizņem pusi no rindas */
+    max-width: 50%;
     text-align: left;              /* teksts izlīdzināts pa kreisi */
     font-weight: 600;              /* vienāds svars visiem – nelēkā */
     background: transparent;
