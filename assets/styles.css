@@ -147,7 +147,7 @@ body::after{
 @media (max-width: 480px){
 
   /* 2 kolonnas, 2 rindas tikai pašā <nav>, logo netiek skarts */
-  header nav{
+  .header .nav{
     display: grid;
     grid-template-columns: 1fr 1fr;   /* 2 kolonnas */
     grid-auto-rows: auto;
@@ -158,7 +158,7 @@ body::after{
   }
 
   /* Lapu nosaukumi šūnās – bez dzeltenā pill */
-  header nav a{
+  .header .nav a{
     margin: 0px;                        /* vairs nav margin-left:14px */
     padding: 5px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
     text-align: left;
@@ -171,9 +171,9 @@ body::after{
   }
 
   /* Aktīvā lapa – tikai pasvītrojums */
-  body[class^="theme-"] header nav a.active,
-  body[class*=" theme-"] header nav a.active,
-  header nav a.active{
+  body[class^="theme-"] .header .nav a.active,
+  body[class*=" theme-"] .header .nav a.active,
+  .header .nav a.active{
     background: transparent !important;
     box-shadow: none !important;
     text-decoration: underline;
