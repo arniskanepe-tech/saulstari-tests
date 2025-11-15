@@ -143,7 +143,7 @@ body::after{
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-/* Telefona PORTRETĀ: nav kā 2×2 režģis, aktīvais tikai pasvītrots */
+/* Telefona PORTRETĀ: nav kā 2×2 režģis, aktīvais tikai pasvītrots */ 
 @media (max-width: 480px){
 
   /* 2 kolonnas, 2 rindas tikai pašā <nav>, logo netiek skarts */
