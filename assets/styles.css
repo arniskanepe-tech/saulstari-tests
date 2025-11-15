@@ -152,7 +152,7 @@ body::after{
     grid-template-columns: 1fr 1fr;   /* 2 kolonnas */
     grid-auto-rows: auto;
     column-gap: 12px;
-    row-gap: 0;
+    row-gap: -4px;
     justify-items: flex-start;        /* teksts pa kreisi katrā šūnā */
     align-items: start;
   }
