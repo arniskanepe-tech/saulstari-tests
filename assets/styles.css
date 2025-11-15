@@ -152,7 +152,7 @@ body::after{
     grid-template-columns: 1fr 1fr;   /* 2 kolonnas */
     grid-auto-rows: auto;
     column-gap: 12px;
-    row-gap: -4px;
+    row-gap: 4px;
     justify-items: flex-start;        /* teksts pa kreisi katrā šūnā */
     align-items: start;
   }
@@ -160,13 +160,13 @@ body::after{
   /* Lapu nosaukumi šūnās – bez dzeltenā pill */
   .header .nav a{
     margin: 0px;                        /* vairs nav margin-left:14px */
-    padding: 5px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
+    padding: 8px 4px;                 /* mazliet lielāks vertikālais “gaiss” */
     text-align: left;
     border-radius: 0;
     background: transparent;
     box-shadow: none;
     font-size: 0.95em;
-    line-height: 1.05;
+    line-height: 1.1;
     color: var(--muted);
   }
 
