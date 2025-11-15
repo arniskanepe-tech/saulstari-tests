@@ -166,7 +166,7 @@ body::after{
     background: transparent;
     box-shadow: none;
     font-size: 0.95em;
-    line-height: 1.2;
+    line-height: 1.05;
     color: var(--muted);
   }
 
